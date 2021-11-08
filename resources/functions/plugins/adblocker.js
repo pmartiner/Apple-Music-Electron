@@ -7,7 +7,15 @@ const { writeFileSync, readFileSync } = require('fs'); // used for caching
 exports.loadAdBlocker = async (window) => {
   const blocker = await ElectronBlocker.fromLists(
     fetch,
-    fullLists
+    fullLists,
+    {
+      enableCompression: true,
+    },
+    {
+      path: 'ad-blocker-engine.bin',
+      read: async (...args) => readFileSync(...args),
+      write: async (...args) => writeFileSync(...args),
+    },
   );
 
   blocker.enableBlockingInSession(window.webContents.session);
