@@ -7,8 +7,7 @@ const {app, nativeImage, nativeTheme, Notification, dialog} = require("electron"
     rimraf = require("rimraf"),
     chmod = require("chmodr"),
     clone = require("git-clone/promise"),
-    trayIconDir = (nativeTheme.shouldUseDarkColors ? join(__dirname, `../icons/media/light/`) : join(__dirname, `../icons/media/dark/`)),
-    ElectronSentry = require("@sentry/electron");
+    trayIconDir = (nativeTheme.shouldUseDarkColors ? join(__dirname, `../icons/media/light/`) : join(__dirname, `../icons/media/dark/`));
 
 const Utils = {
 
@@ -282,13 +281,6 @@ const Utils = {
         })
     },
 
-    /* initAnalytics - Sentry Analytics */
-    initAnalytics: () => {
-        if (app.cfg.get('general.analyticsEnabled') && app.isPackaged) {
-            ElectronSentry.init({dsn: "https://20e1c34b19d54dfcb8231e3ef7975240@o954055.ingest.sentry.io/5903033"});
-        }
-    },
-
     /* checkForUpdates - Checks for update using electron-updater (Part of electron-builder) */
     checkForUpdates: (manual) => {
         if (!app.isPackaged || process.env.NODE_ENV !== 'production') return;
@@ -389,5 +381,4 @@ const Utils = {
     }
 }
 
-Utils.initAnalytics()
 module.exports = Utils;

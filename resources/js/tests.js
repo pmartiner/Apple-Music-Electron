@@ -291,7 +291,6 @@ var _tests = {
                         general: {
                             storefront: "us",
                             discordRPC: "",
-                            analyticsEnabled: true
                         },
                         visual: {
                             theme: "",

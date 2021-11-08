@@ -1,7 +1,5 @@
 const {app} = require('electron'),
-    Player = require('mpris-service'),
-    {initAnalytics} = require('../utils');
-initAnalytics();
+    Player = require('mpris-service');
 
 // Remember to use playerctl when debugging this.
 // I'm just putting this here as I keep forgetting the command.

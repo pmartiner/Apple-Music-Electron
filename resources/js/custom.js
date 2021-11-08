@@ -1285,7 +1285,6 @@ try {
                     AMSettings.HandleField('playbackNotifications');
                     AMSettings.HandleField('trayTooltipSongName');
                     AMSettings.HandleField('startupPage');
-                    AMSettings.HandleField('analyticsEnabled');
                     AMSettings.HandleField('discordRPC');
                     AMSettings.HandleField('discordClearActivityOnPause');
                     AMSettings.HandleField('lfmConnect');

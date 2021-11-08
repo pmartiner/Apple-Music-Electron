@@ -2,9 +2,7 @@ const {app, nativeTheme, nativeImage, Tray} = require("electron"),
     {join, resolve} = require("path"),
     os = require("os"),
     {existsSync, readdirSync} = require("fs"),
-    regedit = require("regedit"),
-    {initAnalytics} = require('./utils');
-initAnalytics();
+    regedit = require("regedit");
 
 const init = {
 
@@ -19,7 +17,6 @@ const init = {
         console.log(`User Data Path: '${app.getPath('userData')}'`)
         console.log(`Current Configuration: ${JSON.stringify(censoredConfig)}`)
         console.log("---------------------------------------------------------------------")
-        if (app.cfg.get('general.analyticsEnabled') && app.isPackaged) console.log('[Sentry] Sentry logging is enabled, any errors you receive will be presented to the development team to fix for the next release.')
         console.verbose('[InitializeBase] Started.');
 
         // Disable CORS

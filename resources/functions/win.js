@@ -2,8 +2,7 @@ const {app, Menu, Notification, TouchBar, BrowserWindow} = require("electron"),
     {TouchBarButton, TouchBarLabel, TouchBarSpacer} = TouchBar,
     {join} = require("path"),
     windowStateKeeper = require("electron-window-state"),
-    {initAnalytics} = require('./utils');
-initAnalytics();
+    { loadAdBlocker } = require('./plugins/adblocker');
 
 module.exports = {
 
@@ -354,6 +353,8 @@ module.exports = {
             }
             win = new BrowserWindow(options)
         }
+
+        loadAdBlocker(win);
 
         // Set the transparency
         if (app.transparency && transparencyOptions && process.platform === "darwin") {

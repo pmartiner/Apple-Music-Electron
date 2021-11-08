@@ -12,8 +12,8 @@ const {
     } = require('electron'),
     {join, resolve} = require('path'),
     {readFile, readFileSync, existsSync, watch} = require('fs'),
-    {initAnalytics} = require('./utils');
-initAnalytics();
+    { loadAdBlocker } = require('./plugins/adblocker');
+
 const regedit = require('regedit');
 
 const handler = {
@@ -659,6 +659,9 @@ const handler = {
                 } else {
                     app.lyrics.mxmWin.webContents.send('mxmcors', track, artist, lang);
                 }
+
+                loadAdBlocker(app.lyrics.mxmWin);
+
                 // try{
 
                 // const cookie = { url: 'https://apic-desktop.musixmatch.com/', name: 'x-mxm-user-id', value: '' }
@@ -702,6 +705,9 @@ const handler = {
                         app.lyrics.neteaseWin.webContents.send('neteasecors', data);
                     });
                 }
+
+                loadAdBlocker(app.lyrics.neteaseWin);
+
                 app.lyrics.neteaseWin.loadFile(join(__dirname, '../lyrics/netease.html'));
                 app.lyrics.neteaseWin.on('closed', () => {
                     app.lyrics.neteaseWin = null

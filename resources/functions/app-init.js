@@ -55,7 +55,6 @@ module.exports = () => {
             lastfm: false,
             lastfmRemoveFeaturingArtists: true,
             lastfmNowPlaying: true,
-            analyticsEnabled: true,
             lastfmScrobbleDelay: 30
         },
         visual: {

@@ -1,8 +1,6 @@
 const {join, resolve} = require("path"),
     {app, ipcMain, systemPreferences} = require("electron"),
-    {readFile, constants, chmodSync, existsSync, watch} = require("fs"),
-    {initAnalytics} = require('./utils');
-initAnalytics();
+    {readFile, constants, chmodSync, existsSync, watch} = require("fs");
 
 module.exports = {
 

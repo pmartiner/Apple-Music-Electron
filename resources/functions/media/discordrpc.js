@@ -1,7 +1,5 @@
 const {app} = require('electron'),
-    DiscordRPC = require('discord-rpc'),
-    {initAnalytics} = require('../utils');
-initAnalytics();
+    DiscordRPC = require('discord-rpc');
 
 module.exports = {
     connect: function (clientId) {

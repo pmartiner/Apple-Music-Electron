@@ -664,42 +664,6 @@
         </template>
     </transition>
     <transition name="fade">
-        <template v-if="page == 'statistics'">
-            <div class="md-container">
-                <div class="md-header">
-                    <h1 class="md-h1">Statistics</h1>
-                </div>
-                <div class="md-body" style="height: auto;display:flex;align-items: center;justify-content: center;">
-                    <p>
-                        These logs when enabled allow us to fix bugs and
-                        errors that may occur during your listening sessions to better improve the application. We
-                        understand if you're not comfortable with them on, but it helps us out immensely in figuring out
-                        widespread issues. (Note: We do not gather personal information, only stuff that shows to you as
-                        an
-                        error in the code.)
-                    </p>
-                </div>
-                <div class="md-body" style="display:flex;align-items: center;justify-content: center;">
-                    <div class="md-option-container" style="width:100%;">
-                        <div class="md-option-line">
-                            <div class="md-option-segment">
-                                Allow statistics to be collected when errors or crashes
-                                occur
-                            </div>
-                            <div class="md-option-segment md-option-segment_auto">
-                                <input type="checkbox" v-model="prefs.general.analyticsEnabled" switch/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="md-footer">
-                    <button class="md-btn" @click="page = 'otherSettings'">Back</button>
-                    <button class="md-btn md-btn-primary" @click="page = 'credits'">Continue</button>
-                </div>
-            </div>
-        </template>
-    </transition>
-    <transition name="fade">
         <template v-if="page == 'credits'">
             <div class="md-container">
                 <div class="md-header">
