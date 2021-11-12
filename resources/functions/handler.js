@@ -11,10 +11,7 @@ const {
         clipboard
     } = require('electron'),
     {join, resolve} = require('path'),
-    {readFile, readFileSync, existsSync, watch} = require('fs'),
-    { loadAdBlocker } = require('./plugins/adblocker');
-
-const regedit = require('regedit'),
+    { loadAdBlocker } = require('./plugins/adblocker'),
     {readFile, readFileSync, writeFile, existsSync, watch} = require('fs'),
     os = require('os'),
     mdns = require('mdns-js'),
@@ -25,7 +22,6 @@ const regedit = require('regedit'),
     DefaultMediaReceiver = require('castv2-client').DefaultMediaReceiver,
     getPort = require('get-port'),
     {Stream} = require('stream'),
-    regedit = require('regedit'),
     WaveFile = require('wavefile').WaveFile;
 
 const handler = {
