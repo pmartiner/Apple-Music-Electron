@@ -1,6 +1,8 @@
 // preload.js
 const electron = require('electron');
 
+
+
 let cache = {playParams: {id: 0}, status: null, remainingTime: 0},
     playbackCache = {status: null, time: Date.now()};
 
@@ -16,19 +18,32 @@ const MusicKitInterop = {
                 if (typeof nowPlayingItem != "undefined") {
                     if (nowPlayingItem["type"] === "musicVideo") {
                         document.querySelector(`.web-chrome`).setAttribute('style', 'height: 20px !important');
+                        document.querySelector(`#MVLyricsBox`).style.display = 'block';
                     } else {
                         document.querySelector(`.web-chrome`).setAttribute('style', 'height: 55px !important');
+                        if (nowPlayingItem["type"] !== "song"){
+                            document.querySelector(`.web-chrome__grid-container`).setAttribute('style', 'margin: 15px auto 0')
+                        } else {
+                            document.querySelector(`.web-chrome__grid-container`).setAttribute('style', 'margin: dsds');}
+                        document.querySelector(`#MVLyricsBox`).style.display = 'none';
                     }
                 }
             } else {
                 document.querySelector(`.web-chrome`).setAttribute('style', 'height: 55px !important');
+                document.querySelector(`#MVLyricsBox`).style.display = 'none';
                 try {
                     const nowPlayingItem = MusicKit.getInstance().nowPlayingItem;
                     if (typeof nowPlayingItem != "undefined") {
                         if (nowPlayingItem["type"] === "musicVideo") {
                             document.querySelector(`.web-chrome`).setAttribute('style', 'height: 20px !important');
+                            document.querySelector(`#MVLyricsBox`).style.display = 'block';
                         } else {
                             document.querySelector(`.web-chrome`).setAttribute('style', 'height: 55px !important');
+                            if (nowPlayingItem["type"] !== "song"){
+                                document.querySelector(`.web-chrome__grid-container`).setAttribute('style', 'margin: 15px auto 0')
+                            } else {
+                                document.querySelector(`.web-chrome__grid-container`).setAttribute('style', 'margin: dsds');}
+                            document.querySelector(`#MVLyricsBox`).style.display = 'none';
                         }
                     }
                 } catch (e) {
@@ -113,6 +128,5 @@ process.once('loaded', () => {
     global.ipcRenderer = electron.ipcRenderer;
     global.MusicKitInterop = MusicKitInterop;
 });
-
 // MusicKit.getInstance().addEventListener( MusicKit.Events.queueItemsDidChange,logIt );
 // MusicKit.getInstance().addEventListener( MusicKit.Events.queuePositionDidChange, logIt );

@@ -22,6 +22,7 @@
   "dependencies": {
     "@cliqz/adblocker-electron": "^1.23.0",
     "@sentry/electron": "^2.5.4",
+    "castv2-client": "github:vapormusic/node-castv2-client",
     "chmodr": "^1.2.0",
     "discord-rpc": "^4.0.1",
     "electron-acrylic-window": "^0.5.9",
@@ -30,24 +31,35 @@
     "electron-store": "^8.0.1",
     "electron-updater": "^4.3.9",
     "electron-window-state": "^5.0.3",
+    "express": "^4.17.1",
+    "get-port": "^5.1.1",
     "git-clone": "^0.2.0",
     "lastfmapi": "^0.1.1",
+    "mdns-js": "github:bitfocus/node-mdns-js",
     "mpris-service": "^2.1.2",
-    "node-fetch": "^3.0.0",
+    "naudiodon": "github:vapormusic/naudiodon",
+    "node-fetch": "^3.1.0",
+    "node-ssdp": "^4.0.1",
+    "opus-media-recorder": "^0.8.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "regedit": "^5.0.0",
     "register-scheme": "github:devsnek/node-register-scheme",
+    "request": "^2.88.2",
     "rimraf": "^3.0.2",
     "source-map-support": "^0.5.20",
-    "v8-compile-cache": "^2.3.0"
+    "upnp-mediarenderer-client": "github:vapormusic/node-upnp-mediarenderer-client",
+    "v8-compile-cache": "^2.3.0",
+    "wavefile": "^11.0.0",
+    "xml2js": "^0.4.23",
+    "youtube-search-without-api-key": "github:vapormusic/youtube-search"
   },
   "devDependencies": {
     "electron": "https://github.com/castlabs/electron-releases.git",
     "electron-builder": "^22.13.1",
     "electron-webpack": "^2.8.2",
     "musickit-typescript": "^1.2.4",
-    "webpack": "~5.62.1"
+    "webpack": "~5.63.0"
   },
   "fileAssociations": [
     {
@@ -70,9 +82,9 @@
     }
   ],
   "build": {
-    "electronVersion": "15.3.0",
+    "electronVersion": "15.3.1",
     "electronDownload": {
-      "version": "15.3.0-wvvmp",
+      "version": "15.3.1-wvvmp",
       "mirror": "https://github.com/castlabs/electron-releases/releases/download/v"
     },
     "appId": "apple-music",
@@ -122,6 +134,7 @@
     "mac": {
       "icon": "./resources/icons/icon.icns",
       "category": "public.app-category.music",
+      "entitlements": "resources/entitlements.mac.plist",
       "darkModeSupport": true
     },
     "extraResources": [
