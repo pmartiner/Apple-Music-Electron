@@ -1019,10 +1019,10 @@ try {
                             return;
                         }
 
-                        const ul = GetXPath("/html/body/div[6]/ul");
+                        const ul = GetXPath("/html/body/div[7]/ul");
 
-                        const amPreferences = GetXPath('/html/body/div[6]/ul/li[2]');
-                        GetXPath('/html/body/div[6]/ul/li[2]/span/span').innerHTML = 'Preferences';
+                        const amPreferences = GetXPath('/html/body/div[7]/ul/li[2]');
+                        GetXPath('/html/body/div[7]/ul/li[2]/span/span').innerHTML = 'Preferences';
                         ul.insertBefore(amPreferences, ul.childNodes[9]);
 
                         const amSettings = document.createElement("li");

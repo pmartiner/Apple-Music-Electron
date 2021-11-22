@@ -14,6 +14,8 @@ const workerOptions = {
 };
 var recorder;
 
+const { join } = require('path');
+
 window.MediaRecorder = OpusMediaRecorder;
 
 var audioWorklet =  `class RecorderWorkletProcessor extends AudioWorkletProcessor {
@@ -166,7 +168,7 @@ var AudioOutputs = {
     eqReady: false,
     activeCasts: [],
     castUI() {
-        AMJavaScript.getRequest("ameres://html/cast_device.html", (content) => {
+        AMJavaScript.getRequest(join(__dirname, '../html/cast_device.html'), (content) => {
             var vm = new Vue({
                 data: {
                     devices: {

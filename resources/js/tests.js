@@ -1,3 +1,5 @@
+const { join } = require("path");
+
 var _tests = {
     usermenuinit() {
         // MOVE ME ONCE IMPLEMENTED!
@@ -17,7 +19,7 @@ var _tests = {
     usermenu(e) {
 
         // MOVE ME ONCE IMPLEMENTED!
-        AMJavaScript.getRequest("ameres://html/usermenu.html", (content) => {
+        AMJavaScript.getRequest(join(__dirname, "../html/usermenu.html"), (content) => {
             var vm = new Vue({
                 data: {
                     menuitems: [
@@ -78,18 +80,18 @@ var _tests = {
                             visible: AudioOutputs.eqReady,
 
                             svg: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="context-menu__option-icon" width="100%" height="100%" viewBox="0 0 16 16" version="1.1">
-<g>
-<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 12.050781 0 L 14.214844 0 L 14.214844 4.808594 L 12.050781 4.808594 Z M 12.050781 0 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 12.050781 7.421875 L 14.214844 7.421875 L 14.214844 15.988281 L 12.050781 15.988281 Z M 12.050781 7.421875 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 6.914062 0 L 9.078125 0 L 9.078125 8.910156 L 6.914062 8.910156 Z M 6.914062 0 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 6.914062 11.527344 L 9.078125 11.527344 L 9.078125 15.988281 L 6.914062 15.988281 Z M 6.914062 11.527344 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 1.773438 0 L 3.9375 0 L 3.9375 1.472656 L 1.773438 1.472656 Z M 1.773438 0 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 1.773438 4.085938 L 3.9375 4.085938 L 3.9375 15.988281 L 1.773438 15.988281 Z M 1.773438 4.085938 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 0.871094 1.921875 L 0.871094 3.636719 L 4.839844 3.636719 L 4.839844 1.921875 Z M 0.871094 1.921875 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 6.011719 9.363281 L 6.011719 11.074219 L 9.976562 11.074219 L 9.976562 9.363281 Z M 6.011719 9.363281 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 12.050781 5.257812 L 11.152344 5.257812 L 11.152344 6.972656 L 15.117188 6.972656 L 15.117188 5.257812 Z M 12.050781 5.257812 "/>
-</g>
-</svg>`,
+                                <g>
+                                    <path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 12.050781 0 L 14.214844 0 L 14.214844 4.808594 L 12.050781 4.808594 Z M 12.050781 0 "/>
+                                    <path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 12.050781 7.421875 L 14.214844 7.421875 L 14.214844 15.988281 L 12.050781 15.988281 Z M 12.050781 7.421875 "/>
+                                    <path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 6.914062 0 L 9.078125 0 L 9.078125 8.910156 L 6.914062 8.910156 Z M 6.914062 0 "/>
+                                    <path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 6.914062 11.527344 L 9.078125 11.527344 L 9.078125 15.988281 L 6.914062 15.988281 Z M 6.914062 11.527344 "/>
+                                    <path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 1.773438 0 L 3.9375 0 L 3.9375 1.472656 L 1.773438 1.472656 Z M 1.773438 0 "/>
+                                    <path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 1.773438 4.085938 L 3.9375 4.085938 L 3.9375 15.988281 L 1.773438 15.988281 Z M 1.773438 4.085938 "/>
+                                    <path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 0.871094 1.921875 L 0.871094 3.636719 L 4.839844 3.636719 L 4.839844 1.921875 Z M 0.871094 1.921875 "/>
+                                    <path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 6.011719 9.363281 L 6.011719 11.074219 L 9.976562 11.074219 L 9.976562 9.363281 Z M 6.011719 9.363281 "/>
+                                    <path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 12.050781 5.257812 L 11.152344 5.257812 L 11.152344 6.972656 L 15.117188 6.972656 L 15.117188 5.257812 Z M 12.050781 5.257812 "/>
+                                </g>
+                            </svg>`,
 
                             onclick: () => {
 
@@ -168,7 +170,7 @@ var _tests = {
         })
     },
     eq() {
-        AMJavaScript.getRequest("ameres://html/eq.html", (content) => {
+        AMJavaScript.getRequest(join(__dirname, "../html/eq.html"), (content) => {
             var vm = new Vue({
                 data: {
                     manualEntry: false,
@@ -214,14 +216,14 @@ var _tests = {
         })
     },
     zoo() {
-        AMJavaScript.getRequest("ameres://html/zoo.html", (content) => {
+        AMJavaScript.getRequest(join(__dirname, "../html/zoo.html"), (content) => {
             var modal = new AMEModal({
                 content: content
             })
         })
     },
     outputDevice() {
-        AMJavaScript.getRequest("ameres://html/outputdevice.html", (content) => {
+        AMJavaScript.getRequest(join(__dirname, "../html/outputdevice.html"), (content) => {
             var vm = new Vue({
                 data: {
                     selected: "",
@@ -310,7 +312,7 @@ var _tests = {
     oobe(skipIntro = false, closeBtn = false) {
         // MOVE ME ONCE IMPLEMENTED!
 
-        AMJavaScript.getRequest("ameres://html/oobe.html", (content) => {
+        AMJavaScript.getRequest(join(__dirname, "../html/oobe.html"), (content) => {
             var vm = new Vue({
                 data: {
                     prefs: {
